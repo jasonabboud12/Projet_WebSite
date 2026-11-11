@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dernière nuit ensemble</title>
+<style>
+  :root {
+    --bg: #0e0a0b;
+    --panel: #1a1012;
+    --bone: #ece3d3;
+    --muted: #a89c8f;
+    --blood: #b3172a;
+    --blood-dark: #5e0d17;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--bone);
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    line-height: 1.75;
+    font-size: 1.1rem;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2rem clamp(1.2rem, 8vw, 6rem) clamp(3rem, 10vh, 6rem);
+    background:
+      radial-gradient(ellipse 60% 50% at 78% 38%, rgba(179, 23, 42, 0.28), transparent 70%),
+      linear-gradient(180deg, #140c0e 0%, var(--bg) 100%);
+    position: relative;
+  }
+  .hero nav { position: absolute; top: 1.6rem; right: clamp(1.2rem, 8vw, 6rem); display: flex; gap: 1.6rem; }
+  .hero nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+  .hero nav a:hover, .hero nav a:focus-visible { color: var(--bone); outline: none; text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: 6px; }
+  .hero h1 {
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(3rem, 11vw, 8.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { display: block; color: var(--blood); padding-left: 0.6em; }
+  .hero .tag {
+    max-width: 34rem;
+    margin: 2rem 0 0;
+    color: var(--muted);
+    border-left: 3px solid var(--blood);
+    padding-left: 1rem;
+  }
+
+  /* Content rows: label left, text right */
+  main { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.2rem, 6vw, 3rem); }
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    padding: 4.5rem 0;
+    border-top: 1px solid #2c1c1f;
+  }
+  .row > h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--blood);
+    position: sticky; top: 2rem; align-self: start;
+  }
+  .row p { margin: 0 0 1.2rem; max-width: 38rem; }
+  .question { font-size: 1.6rem; line-height: 1.4; font-style: italic; max-width: 32rem; }
+
+  .goals { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; gap: 1rem; }
+  .goals li { background: var(--panel); border-left: 3px solid var(--blood); padding: 1rem 1.2rem; max-width: 38rem; }
+  .goals strong { display: block; font-weight: 400; font-size: 1.2rem; }
+  .goals span { color: var(--muted); font-size: 1rem; }
+
+  .one-life {
+    margin-top: 2.4rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--blood-dark);
+    max-width: 38rem;
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  /* Replace a .shot div with: <img class="shot" src="image.jpg" alt="..."> */
+  .shot {
+    width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
+    background: var(--panel); border: 1px solid #3a2226;
+    display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; font-style: italic;
+  }
+
+  .team { display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
+  .team div { border-top: 2px solid var(--blood); padding-top: 0.6rem; min-width: 12rem; }
+  .team strong { font-weight: 400; font-size: 1.3rem; display: block; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 3rem 1rem; border-top: 1px solid #2c1c1f; }
+
+  @media (max-width: 700px) {
+    .row { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0; }
+    .row > h2 { position: static; }
+    .hero nav { gap: 1rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav>
+    <a href="#histoire">Histoire</a>
+    <a href="#jeu">Le jeu</a>
+    <a href="#equipe">Équipe</a>
+  </nav>
+  <h1>Dernière<span>nuit ensemble</span></h1>
+  <p class="tag">Ça aurait dû être une belle soirée avec une personne qui vous intéresse, mais cette soirée sera votre dernière.</p>
+</header>
+
+<main>
+
+  <section class="row" id="histoire">
+    <h2>L’histoire</h2>
+    <div>
+      <p class="question">Est-ce que vous pourriez survivre à cette soirée avec un inconnu rencontré en ligne, qui a un goût spécifique pour vous?</p>
+      <p>Ce jeu vous met dans la peau d’une victime qui essaie de s’échapper d’un cannibale. Il vous a choisi comme son repas pour cette nuit.</p>
+    </div>
+  </section>
+
+  <section class="row" id="jeu">
+    <h2>Le jeu</h2>
+    <div>
+      <p>Vous devez naviguer dans une maison pour survivre à Monsieur John.</p>
+      <ul class="goals">
+        <li><strong>Trouvez des clés</strong><span>Pour ouvrir les portes et vous échapper.</span></li>
+        <li><strong>Trouvez une arme</strong><span>Pour vous défendre de Monsieur John.</span></li>
+      </ul>
+      <p class="one-life">Faites attention : vous n’avez qu’une seule vie!</p>
+
+      <div class="shots">
+        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 1</div>
+        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 2</div>
+        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 3</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="equipe">
+    <h2>Équipe</h2>
+    <div class="team">
+      <div><strong>Jason Abboud</strong></div>
+      <div><strong>Oleksandr Khomyakov</strong></div>
+    </div>
+  </section>
+   <section class="row" id="equipe">
+    <h2>Superviseur</h2>
+    <div class="team">
+      <div><strong>Kyle Ross</strong></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>2025 - Dernière nuit ensemble - 420KBHLG</footer>
+
+</body>
+</html>
