@@ -23,7 +23,7 @@
     line-height: 1.75;
     font-size: 1.1rem;
   }
-
+ 
   /* Hero */
   .hero {
     min-height: 100vh;
@@ -53,7 +53,7 @@
     border-left: 3px solid var(--blood);
     padding-left: 1rem;
   }
-
+ 
   /* Content rows: label left, text right */
   main { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.2rem, 6vw, 3rem); }
   .row {
@@ -73,12 +73,12 @@
   }
   .row p { margin: 0 0 1.2rem; max-width: 38rem; }
   .question { font-size: 1.6rem; line-height: 1.4; font-style: italic; max-width: 32rem; }
-
+ 
   .goals { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; gap: 1rem; }
   .goals li { background: var(--panel); border-left: 3px solid var(--blood); padding: 1rem 1.2rem; max-width: 38rem; }
   .goals strong { display: block; font-weight: 400; font-size: 1.2rem; }
   .goals span { color: var(--muted); font-size: 1rem; }
-
+ 
   .one-life {
     margin-top: 2.4rem;
     padding: 1.4rem 1.6rem;
@@ -87,7 +87,9 @@
     font-size: 1.3rem;
     font-style: italic;
   }
-
+ 
+  .shots-title { margin: 3rem 0 0.4rem; font-weight: 400; font-style: italic; font-size: 1.3rem; color: var(--blood); }
+  .soon { color: var(--muted); font-size: 1rem; }
   .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
   /* Replace a .shot div with: <img class="shot" src="image.jpg" alt="..."> */
   .shot {
@@ -95,13 +97,15 @@
     background: var(--panel); border: 1px solid #3a2226;
     display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; font-style: italic;
   }
-
+ 
   .team { display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
   .team div { border-top: 2px solid var(--blood); padding-top: 0.6rem; min-width: 12rem; }
   .team strong { font-weight: 400; font-size: 1.3rem; display: block; }
-
+ 
+  .team a { color: var(--muted); font-size: 0.95rem; text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: 4px; word-break: break-all; }
+  .team a:hover, .team a:focus-visible { color: var(--bone); outline: none; }
   footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 3rem 1rem; border-top: 1px solid #2c1c1f; }
-
+ 
   @media (max-width: 700px) {
     .row { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0; }
     .row > h2 { position: static; }
@@ -124,27 +128,31 @@
 <main>
 
   <section class="row" id="histoire">
-    <h2>L’histoire</h2>
+    <h2>L'histoire</h2>
     <div>
       <p class="question">Est-ce que vous pourriez survivre à cette soirée avec un inconnu rencontré en ligne, qui a un goût spécifique pour vous?</p>
-      <p>Ce jeu vous met dans la peau d’une victime qui essaie de s’échapper d’un cannibale. Il vous a choisi comme son repas pour cette nuit.</p>
-    </div>
+      <p>Après plusieurs conversations en ligne, le moment est enfin venu de rencontrer en personne cette personne qui vous intéresse. Le rendez-vous se passe bien, tout semble parfait, mais cette soirée sera votre dernière.</p>
+      <p>Ce jeu d'horreur et de survie vous met dans la peau d'une victime qui essaie de s'échapper d'un cannibale. Après le rendez-vous, Monsieur John vous ramène chez vous en voiture. Vous discutez ensemble de la soirée, puis, au moment où vous ouvrez votre porte, il vous saute dessus et vous plaque sur le visage un tissu imbibé de chloroforme. Vous perdez connaissance et vous vous réveillez enlevée, enfermée dans sa maison, car il vous a choisie comme son repas pour cette nuit. Derrière son charme se cachait un prédateur, et vous comprenez trop tard à qui vous avez affaire.</p>
   </section>
 
   <section class="row" id="jeu">
     <h2>Le jeu</h2>
     <div>
-      <p>Vous devez naviguer dans une maison pour survivre à Monsieur John.</p>
+      <p>Vous devez naviguer prudemment dans la maison, fouiller les pièces et survivre à Monsieur John, qui rôde dans les lieux. Le moindre faux pas pourrait vous trahir.</p>
       <ul class="goals">
         <li><strong>Trouvez des clés</strong><span>Pour ouvrir les portes et vous échapper.</span></li>
         <li><strong>Trouvez une arme</strong><span>Pour vous défendre de Monsieur John.</span></li>
+        <li><strong>Cachez-vous</strong><span>Dans les garde-robes, sous les lits ou derrière les meubles lorsqu’il s’approche. Retenez votre souffle jusqu'à ce qu'il s'éloigne.</span></li>
+        <li><strong>Faites de faux bruits</strong><span>Faites tomber un objet ou claquez une porte au bout du couloir pour l’attirer ailleurs et gagner du temps. Mais attention : un bruit trop près de lui, et c'est vous qu'il trouvera.</span></li>
       </ul>
-      <p class="one-life">Faites attention : vous n’avez qu’une seule vie!</p>
+      <p class="one-life">Faites attention : vous n'avez qu'une seule vie! Il n'y a pas de seconde chance, alors chaque décision compte.</p>
 
+       <h3 class="shots-title">Captures d'écran</h3>
+      <p class="soon">Bientôt disponibles. Les captures d'écran du jeu, avec une description de la façon de jouer, seront ajoutées prochainement.</p>
       <div class="shots">
-        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 1</div>
-        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 2</div>
-        <div class="shot" role="img" aria-label="Image à remplacer">Capture d’écran 3</div>
+        <div class="shot" role="img" aria-label="Capture d'écran à venir">Bientôt disponible</div>
+        <div class="shot" role="img" aria-label="Capture d'écran à venir">Bientôt disponible</div>
+        <div class="shot" role="img" aria-label="Capture d'écran à venir">Bientôt disponible</div>
       </div>
     </div>
   </section>
@@ -152,11 +160,12 @@
   <section class="row" id="equipe">
     <h2>Équipe</h2>
     <div class="team">
-      <div><strong>Jason Abboud</strong></div>
-      <div><strong>Oleksandr Khomyakov</strong></div>
+      <div><strong>Jason Abboud</strong><a href="mailto:jasonabboud@live.ca">jasonabboud@live.ca</a></div>
+      <div><strong>Oleksandr Khomyakov</strong><a href="mailto:oleksand.khomiakov@hotmail.com">oleksand.khomiakov@hotmail.com</a></div>
     </div>
   </section>
-   <section class="row" id="equipe">
+
+  <section class="row" id="superviseur">
     <h2>Superviseur</h2>
     <div class="team">
       <div><strong>Kyle Ross</strong></div>
